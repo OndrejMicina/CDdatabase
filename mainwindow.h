@@ -19,6 +19,8 @@ public:
 private slots:
     void on_newAlbumButton_clicked();
 
+    void UpdateAlbumList();
+
 private:
     Ui::MainWindow *ui;
 };

@@ -29,20 +29,6 @@
       </property>
      </widget>
     </item>
-    <item row="4" column="0">
-     <widget class="QLabel" name="label_2">
-      <property name="text">
-       <string>Song list</string>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="1">
-     <widget class="QPushButton" name="newAlbumButton">
-      <property name="text">
-       <string>New album</string>
-      </property>
-     </widget>
-    </item>
     <item row="1" column="0">
      <widget class="QTableWidget" name="albumTable">
       <property name="enabled">
@@ -150,6 +136,101 @@
         <string>14</string>
        </property>
       </item>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QTreeWidget" name="albumTree">
+      <property name="dragEnabled">
+       <bool>false</bool>
+      </property>
+      <property name="dragDropMode">
+       <enum>QAbstractItemView::NoDragDrop</enum>
+      </property>
+      <property name="selectionBehavior">
+       <enum>QAbstractItemView::SelectRows</enum>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>70</width>
+        <height>70</height>
+       </size>
+      </property>
+      <property name="indentation">
+       <number>15</number>
+      </property>
+      <property name="sortingEnabled">
+       <bool>true</bool>
+      </property>
+      <property name="animated">
+       <bool>false</bool>
+      </property>
+      <column>
+       <property name="text">
+        <string>Album</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Author</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Date</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Genre</string>
+       </property>
+      </column>
+      <item>
+       <property name="text">
+        <string>leper</string>
+       </property>
+       <property name="icon">
+        <iconset resource="Resources.qrc">
+         <normaloff>:/Images/Images/default_album.png</normaloff>:/Images/Images/default_album.png</iconset>
+       </property>
+       <property name="text">
+        <string>manke</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>New Item</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>brakter</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </item>
+      </item>
+      <item>
+       <property name="text">
+        <string>karter</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>sss</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>safge</string>
+        </property>
+       </item>
+      </item>
+     </widget>
+    </item>
+    <item row="4" column="1">
+     <widget class="QPushButton" name="newAlbumButton">
+      <property name="text">
+       <string>New album</string>
+      </property>
      </widget>
     </item>
    </layout>
