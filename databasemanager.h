@@ -15,7 +15,8 @@ public:
     void addSongsToAlbum(QString albumFolder,QStringList musicFiles);
     void addAlbumImage(QString albumFolder,QString imagePath);
     void addAlbum(Album album);
-    QList<Album*> albumList();
+    QList<Album*> listOfAlbums();
+    QStringList strList();
 };
 
 #endif // DATABASEMANAGER_H
