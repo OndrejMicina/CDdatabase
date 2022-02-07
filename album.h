@@ -12,12 +12,12 @@ public:
 
     QString albumName;
     QString author;
-    QDate date;
+    QString date;
     QString genre;
-    QStringList musicFiles;
+    QStringList albumSongList;
     QString imageFile;
 
-    Album(QString albumName,QString author,QDate date,QString genre,QStringList musicFiles,QString imageFile);
+    Album(QString albumName,QString author,QString date,QString genre,QStringList albumSongList,QString imageFile);
 
 
 
