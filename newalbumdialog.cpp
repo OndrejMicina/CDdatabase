@@ -5,9 +5,10 @@
 
 
 #include "databasemanager.h"
+#include "album.h"
 
 QStringList musicFiles;
-QString albumImage;
+QString imageFile;
 
 NewAlbumDialog::NewAlbumDialog(QWidget *parent) :
     QDialog(parent),
@@ -18,7 +19,7 @@ NewAlbumDialog::NewAlbumDialog(QWidget *parent) :
 }
 
 NewAlbumDialog::~NewAlbumDialog()
-{
+{    
     delete ui;
 }
 
@@ -44,12 +45,11 @@ void NewAlbumDialog::on_AlbumImagePreview_clicked()
                                                       "Image (*.bmp)");
     if(imgPath!=""){
 
-        albumImage=imgPath;
+        imageFile=imgPath;
 
-        ui->AlbumImagePreview->setPixmap(albumImage);
+        ui->AlbumImagePreview->setPixmap(imageFile);
         ui->genreLineEdit->setText("IMAGE CLICKED");
     }
-
 }
 
 
@@ -60,22 +60,17 @@ void NewAlbumDialog::on_albumAddOkButton_clicked()
 
    if(dm->ensureCreated()){
 
-
-       //create folder here, return path
-       QString albumPath= dm->createAlbumFolder(ui->albumNameLineEdit->text());
-
-       dm->addAlbum(
-                   ui->albumNameLineEdit->text(),  //get all parameters from UI
+       Album album(
+                   ui->albumNameLineEdit->text(),
                    ui->authorNameLineEdit->text(),
                    ui->dateEdit->date(),
                    ui->genreLineEdit->text(),
-                   albumPath
-                   );
+                   musicFiles,
+                   imageFile);
 
-       dm->addSongsToAlbum(albumPath,musicFiles);
+       dm->addAlbum(album);
+       close();
    }
-
-
 }
 
 

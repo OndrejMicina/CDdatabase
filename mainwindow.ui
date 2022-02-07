@@ -15,16 +15,6 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="1" column="0">
-     <widget class="CustomListWidget" name="AlbumList" native="true">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-     </widget>
-    </item>
     <item row="0" column="0">
      <widget class="QLabel" name="label">
       <property name="text">
@@ -32,25 +22,134 @@
       </property>
      </widget>
     </item>
-    <item row="1" column="1">
+    <item row="3" column="1">
      <widget class="QLabel" name="label_3">
       <property name="text">
        <string>TextLabel</string>
       </property>
      </widget>
     </item>
-    <item row="2" column="0">
+    <item row="4" column="0">
      <widget class="QLabel" name="label_2">
       <property name="text">
        <string>Song list</string>
       </property>
      </widget>
     </item>
-    <item row="3" column="1">
+    <item row="5" column="1">
      <widget class="QPushButton" name="newAlbumButton">
       <property name="text">
        <string>New album</string>
       </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QTableWidget" name="albumTable">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>80</width>
+        <height>80</height>
+       </size>
+      </property>
+      <property name="textElideMode">
+       <enum>Qt::ElideMiddle</enum>
+      </property>
+      <property name="showGrid">
+       <bool>false</bool>
+      </property>
+      <property name="gridStyle">
+       <enum>Qt::SolidLine</enum>
+      </property>
+      <property name="sortingEnabled">
+       <bool>true</bool>
+      </property>
+      <property name="wordWrap">
+       <bool>false</bool>
+      </property>
+      <attribute name="horizontalHeaderVisible">
+       <bool>true</bool>
+      </attribute>
+      <attribute name="horizontalHeaderCascadingSectionResizes">
+       <bool>false</bool>
+      </attribute>
+      <attribute name="horizontalHeaderMinimumSectionSize">
+       <number>85</number>
+      </attribute>
+      <attribute name="horizontalHeaderDefaultSectionSize">
+       <number>85</number>
+      </attribute>
+      <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+       <bool>true</bool>
+      </attribute>
+      <attribute name="verticalHeaderVisible">
+       <bool>false</bool>
+      </attribute>
+      <attribute name="verticalHeaderMinimumSectionSize">
+       <number>85</number>
+      </attribute>
+      <attribute name="verticalHeaderDefaultSectionSize">
+       <number>85</number>
+      </attribute>
+      <row>
+       <property name="text">
+        <string>New Row</string>
+       </property>
+      </row>
+      <column>
+       <property name="text">
+        <string>Cover</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Name</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Author</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Date</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Genre</string>
+       </property>
+      </column>
+      <item row="0" column="0">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="Resources.qrc">
+         <normaloff>:/Images/Images/default_album.png</normaloff>:/Images/Images/default_album.png</iconset>
+       </property>
+      </item>
+      <item row="0" column="1">
+       <property name="text">
+        <string>Stamdrare mese</string>
+       </property>
+      </item>
+      <item row="0" column="2">
+       <property name="text">
+        <string>SS</string>
+       </property>
+      </item>
+      <item row="0" column="3">
+       <property name="text">
+        <string>14</string>
+       </property>
+      </item>
      </widget>
     </item>
    </layout>
@@ -67,14 +166,8 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>CustomListWidget</class>
-   <extends>QWidget</extends>
-   <header>customlistwidget.h</header>
-   <container>1</container>
-  </customwidget>
- </customwidgets>
- <resources/>
+ <resources>
+  <include location="Resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

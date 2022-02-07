@@ -1,29 +1,24 @@
 #ifndef ALBUM_H
 #define ALBUM_H
 
-#include <QObject>
+
+#include <QString>
 #include <QDate>
 
-class Album : public QObject
+class Album
 {
-    Q_OBJECT
 
-private:
+public:
+
     QString albumName;
-    QString authorName;
-    QString imgPath;
-    QDate releaseDate;
-    QStringList songList;
+    QString author;
+    QDate date;
+    QString genre;
+    QStringList musicFiles;
+    QString imageFile;
 
+    Album(QString albumName,QString author,QDate date,QString genre,QStringList musicFiles,QString imageFile);
 
-public:   
-    explicit Album(QObject *parent = nullptr);
-     void FillInfo();
-
-
-signals:
-
-private slots:
 
 
 };

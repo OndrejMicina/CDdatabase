@@ -4,16 +4,18 @@
 
 #include <QString>
 #include <QDate>
+#include "album.h"
 
 class DatabaseManager
 {
 public:
     DatabaseManager();
     bool ensureCreated();
-    void addAlbum(QString albumName="name",QString author="author", QDate date=QDate(0,0,0),QString genre="genre",QString albumFolder="");
-    QString createAlbumFolder(QString albumName="AlbumName");
-    bool addSongsToAlbum(QString albumFolder,QStringList musicFiles);
-
+    QString createAlbumFolder(QString albumName);
+    void addSongsToAlbum(QString albumFolder,QStringList musicFiles);
+    void addAlbumImage(QString albumFolder,QString imagePath);
+    void addAlbum(Album album);
+    QList<Album*> albumList();
 };
 
 #endif // DATABASEMANAGER_H

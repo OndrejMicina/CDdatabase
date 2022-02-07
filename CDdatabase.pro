@@ -12,7 +12,6 @@ CONFIG += c++11
 SOURCES += \
     album.cpp \
     clickablelabel.cpp \
-    customlistwidget.cpp \
     databasemanager.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -21,13 +20,11 @@ SOURCES += \
 HEADERS += \
     album.h \
     clickablelabel.h \
-    customlistwidget.h \
     databasemanager.h \
     mainwindow.h \
     newalbumdialog.h
 
 FORMS += \
-    customlistwidget.ui \
     mainwindow.ui \
     newalbumdialog.ui
 

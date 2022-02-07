@@ -7,6 +7,16 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    ui->albumTable->setColumnWidth(0, 85);
+    ui->albumTable->setColumnWidth(1, 125);
+    QFont font=QFont("Segoe UI",12);
+    font.setBold(false);
+    ui->albumTable->setFont(font);
+
+
+
+
+
 }
 
 MainWindow::~MainWindow()
