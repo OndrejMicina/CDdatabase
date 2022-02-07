@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/Images">
+        <file>Images/default_album.png</file>
+        <file>Images/add_image.png</file>
+    </qresource>
+</RCC>
