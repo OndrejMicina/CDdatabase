@@ -3,7 +3,6 @@
 
 #include <QFileDialog>
 
-
 #include "databasemanager.h"
 #include "album.h"
 
@@ -32,8 +31,8 @@ void NewAlbumDialog::on_addSongsButton_clicked()
                                                       "Audio (*.mp3 *.waw)");
     ui->songsListWidget->clear();
     ui->songsListWidget->addItems(musicFiles);
-
     ui->songsListWidget->update();
+
 }
 
 
@@ -48,9 +47,9 @@ void NewAlbumDialog::on_AlbumImagePreview_clicked()
         imageFile=imgPath;
 
         ui->AlbumImagePreview->setPixmap(imageFile);
-        ui->genreLineEdit->setText("IMAGE CLICKED");
     }
 }
+
 
 
 
@@ -63,19 +62,23 @@ void NewAlbumDialog::on_albumAddOkButton_clicked()
        Album album(
                    ui->albumNameLineEdit->text(),
                    ui->authorNameLineEdit->text(),
-                   ui->dateEdit->date(),
+                   ui->dateEdit->text(),
                    ui->genreLineEdit->text(),
                    musicFiles,
                    imageFile);
 
        dm->addAlbum(album);
-       close();
+
+       accept();
    }
 }
 
 
 void NewAlbumDialog::on_closeButton_clicked()
 {
-    close();
+    reject();
 }
+
+
+
 

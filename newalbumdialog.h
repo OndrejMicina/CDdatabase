@@ -15,6 +15,7 @@ public:
     explicit NewAlbumDialog(QWidget *parent = nullptr);
     ~NewAlbumDialog();
 
+
 private slots:
 
 
@@ -25,6 +26,8 @@ private slots:
     void on_closeButton_clicked();
 
     void on_AlbumImagePreview_clicked();
+
+    void on_NewAlbumDialog_accepted();
 
 private:
     Ui::NewAlbumDialog *ui;
