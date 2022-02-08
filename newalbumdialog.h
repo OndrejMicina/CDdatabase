@@ -27,8 +27,6 @@ private slots:
 
     void on_AlbumImagePreview_clicked();
 
-    void on_NewAlbumDialog_accepted();
-
 private:
     Ui::NewAlbumDialog *ui;
 };
