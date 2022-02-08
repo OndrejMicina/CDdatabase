@@ -153,8 +153,6 @@ void DatabaseManager::addAlbum(Album album)
                 song.appendChild(fPath);
                 albumElement.appendChild(song);
             }
-
-
             elementList.appendChild(albumElement);
 
             QTextStream stream(&xmlFile);
@@ -205,12 +203,12 @@ QList<Album *> DatabaseManager::listOfAlbums()
             QDomElement domElement = domNode.toElement();
             if (!domElement.isNull()) {
                 //create album here
-                QString albumName = domElement.attribute("albumName");      //name
-                QString author = domElement.attribute("author");         //author
-                QString date = domElement.attribute("date");           //date
-                QString genre = domElement.attribute("genre");          //genre
-                QString albumFolder = domElement.attribute("albumFolder");    //albumFolderPath
-                QString imageFile = domElement.attribute("albumFolder")+"/ALBUM_IMAGE.bmp";  //imageFile
+                QString albumName = domElement.attribute("albumName");                          //name
+                QString author = domElement.attribute("author");                                //author
+                QString date = domElement.attribute("date");                                    //date
+                QString genre = domElement.attribute("genre");                                  //genre
+                QString albumFolder = domElement.attribute("albumFolder");                      //albumFolderPath
+                QString imageFile = domElement.attribute("albumFolder")+"/ALBUM_IMAGE.bmp";     //imageFile
 
                 QDomNodeList nodeList = domElement.elementsByTagName("AlbumSong");
                 QStringList albumSongList;
@@ -218,7 +216,6 @@ QList<Album *> DatabaseManager::listOfAlbums()
                 for(int i =0; i<nodeList.count();i++){
                     QString songRow = nodeList.at(i).toElement().text();
                     albumSongList.append(songRow);
-                    qDebug() << "ADDING TO LIST"+songRow;
                 }
 
                 Album *album = new Album(albumName,author,date,genre,albumSongList,imageFile);

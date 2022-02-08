@@ -12,11 +12,11 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    ui->albumTree->setColumnWidth(0, 400);
+    ui->albumTree->setColumnWidth(0, 300);
+    ui->albumTree->setColumnWidth(1, 200);
+    QFont font=QFont("Segoe UI",11);
+    ui->albumTree->setFont(font);
 
-    QFont font=QFont("Segoe UI",12);
-    font.setBold(false);
-    ui->albumTable->setFont(font);
     UpdateAlbumList();
 }
 
@@ -78,7 +78,15 @@ void MainWindow::UpdateAlbumList()
     for(int row =0;row<listOfAlbums.count();row++){
 
         QTreeWidgetItem *root= new QTreeWidgetItem(ui->albumTree);
-        QIcon *qicon= new QIcon(listOfAlbums[row]->imageFile);
+        QIcon *qicon;
+        if (QFile::exists(listOfAlbums[row]->imageFile))
+        {
+             qicon= new QIcon(listOfAlbums[row]->imageFile);
+        }
+        else{
+            qicon= new QIcon(":/Images/Images/default_album.png");
+        }
+
         root->setIcon(0,*qicon);
         root->setText(0,listOfAlbums[row]->albumName);
         root->setText(1,listOfAlbums[row]->author);
@@ -93,16 +101,13 @@ void MainWindow::UpdateAlbumList()
 
             QTreeWidgetItem *child= new QTreeWidgetItem();
 
-
             child->setText(0,song);
-            root->addChild(child)   ;
+
+            root->addChild(child);
         }
-
-
-
     }
 
-    ui->albumTable->update();
+    ui->albumTree->update();
 }
 
 
