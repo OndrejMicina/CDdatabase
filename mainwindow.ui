@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1105</width>
-    <height>731</height>
+    <width>825</width>
+    <height>483</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,11 +17,17 @@
    <layout class="QGridLayout" name="gridLayout">
     <item row="1" column="0">
      <widget class="QTreeWidget" name="albumTree">
+      <property name="showDropIndicator" stdset="0">
+       <bool>true</bool>
+      </property>
       <property name="dragEnabled">
        <bool>false</bool>
       </property>
       <property name="dragDropMode">
        <enum>QAbstractItemView::NoDragDrop</enum>
+      </property>
+      <property name="alternatingRowColors">
+       <bool>true</bool>
       </property>
       <property name="selectionBehavior">
        <enum>QAbstractItemView::SelectRows</enum>
